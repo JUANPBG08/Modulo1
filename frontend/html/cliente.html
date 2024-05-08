@@ -1,0 +1,106 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <link rel="stylesheet" href="/frontend/css/cliente.css">
+</head>
+
+<div class="content">
+    <h1>Clientes</h1>
+    <div class="options">
+      <button id="add-client-btn">Agregar Cliente</button>
+      <input type="text" id="search-name" placeholder="Filtrar por nombre">
+      <input type="text" id="search-city" placeholder="Filtrar por ciudad">
+      <select id="search-state">
+        <option value="">Filtrar por estado</option>
+        <option value="Activo">Activo</option>
+        <option value="Inactivo">Inactivo</option>
+      </select>
+    </div>
+    <div class="table-container">
+      <table id="client-table">
+        <thead>
+          <tr>
+            <th>ID</th>
+            <th>Tipo de identificación</th>
+            <th>Número de identificación</th>
+            <th>Nombre</th>
+            <th>Apellidos</th>
+            <th>Teléfono</th>
+            <th>Dirección</th>
+            <th>Ciudad</th>
+            <th>Estado</th>
+            <th>Acciones</th>
+          </tr>
+        </thead>
+        <tbody>
+          <!-- Aquí se cargarán los datos de los clientes -->
+        </tbody>
+      </table>
+    </div>
+  </div>
+  
+  <div id="add-client-modal" class="modal">
+    <div class="modal-content">
+      <span class="close">&times;</span>
+      <h2>Agregar Cliente</h2>
+      <form id="add-client-form">
+        <div class="form-group">
+          <label for="identification-type">Tipo de identificación:</label>
+          <select id="identification-type" name="identification-type">
+            <option value="CC">Cédula de ciudadanía</option>
+            <option value="TI">Tarjeta de identidad</option>
+            <option value="CE">Cédula de extranjería</option>
+          </select>
+        </div>
+        <div class="form-group">
+          <label for="identification-number">Número de identificación:</label>
+          <input type="text" id="identification-number" name="identification-number">
+        </div>
+        <div class="form-group">
+          <label for="client-name">Nombre del cliente:</label>
+          <input type="text" id="client-name" name="client-name">
+        </div>
+        <div class="form-group">
+          <label for="client-lastname">Apellidos del cliente:</label>
+          <input type="text" id="client-lastname" name="client-lastname">
+        </div>
+        <div class="form-group">
+          <label for="client-phone">Número de teléfono del cliente:</label>
+          <input type="text" id="client-phone" name="client-phone">
+        </div>
+        <div class="form-group">
+          <label for="client-address">Dirección de residencia del cliente:</label>
+          <input type="text" id="client-address" name="client-address">
+        </div>
+        <div class="form-group">
+          <label for="client-city">Ciudad:</label>
+          <input type="text" id="client-city" name="client-city">
+        </div>
+        <div class="form-group">
+          <label for="client-state">Estado:</label>
+          <select id="client-state" name="client-state">
+            <option value="Activo">Activo</option>
+            <option value="Inactivo">Inactivo</option>
+          </select>
+        </div>
+        <div class="form-group">
+          <input type="submit" value="Registrar">
+        </div>
+      </form>
+    </div>
+  </div>
+  
+  <div id="delete-client-modal" class="modal">
+    <div class="modal-content">
+      <span class="close">&times;</span>
+      <h2>¿Está seguro de eliminar?</h2>
+      <button id="confirm-delete-btn">Eliminar</button>
+      <button id="cancel-delete-btn">Cancelar</button>
+    </div>
+  </div>
+</body>
+<script src="/frontend/js/cliente.js"></script>
+</html>
