@@ -7,68 +7,83 @@
     <link rel="stylesheet" href="/frontend/css/productos.css">
 </head>
 <body>
-    <div class="content">
-        <h1>Productos</h1>
-        <div class="options">
-          <button id="add-product-btn">Agregar Producto</button>
-          <input type="text" id="search-name" placeholder="Filtrar por nombre">
-          <input type="text" id="search-category" placeholder="Filtrar por categoría">
+  <div class="content">
+    <h1>Productos</h1>
+    <button id="add-product-btn">Agregar Producto</button>
+    <div class="table-container">
+      <table id="product-table">
+        <thead>
+          <tr>
+            <th>ID</th>
+            <th>Nombre</th>
+            <th>Descripción</th>
+            <th>Cantidad</th>
+            <th>Precio</th>
+            <th>IVA</th>
+            <th>Descuento</th>
+            <th>Estado</th>
+            <th>Acciones</th>
+          </tr>
+        </thead>
+        <tbody>
+          <!-- Aquí se cargarán los datos de los productos -->
+        </tbody>
+      </table>
+    </div>
+  </div>
+  
+  <div id="add-product-modal" class="modal">
+    <div class="modal-content">
+      <span class="close">&times;</span>
+      <h2>Agregar Producto</h2>
+      <form id="add-product-form">
+        <div class="form-group">
+          <label for="product-name">Nombre:</label>
+          <input type="text" id="product-name" name="product-name">
         </div>
-        <div class="table-container">
-          <table id="product-table">
-            <thead>
-              <tr>
-                <th>ID</th>
-                <th>Nombre</th>
-                <th>Categoría</th>
-                <th>Precio</th>
-                <th>Stock</th>
-                <th>Acciones</th>
-              </tr>
-            </thead>
-            <tbody>
-              <!-- Aquí se cargarán los datos de los productos -->
-            </tbody>
-          </table>
+        <div class="form-group">
+          <label for="product-description">Descripción:</label>
+          <input type="text" id="product-description" name="product-description">
         </div>
-      </div>
-      
-      <div id="add-product-modal" class="modal">
-        <div class="modal-content">
-          <span class="close">&times;</span>
-          <h2>Agregar Producto</h2>
-          <form id="add-product-form">
-            <div class="form-group">
-              <label for="product-name">Nombre del producto:</label>
-              <input type="text" id="product-name" name="product-name">
-            </div>
-            <div class="form-group">
-              <label for="product-category">Categoría del producto:</label>
-              <input type="text" id="product-category" name="product-category">
-            </div>
-            <div class="form-group">
-              <label for="product-price">Precio del producto:</label>
-              <input type="text" id="product-price" name="product-price">
-            </div>
-            <div class="form-group">
-              <label for="product-stock">Stock del producto:</label>
-              <input type="text" id="product-stock" name="product-stock">
-            </div>
-            <div class="form-group">
-              <input type="submit" value="Registrar">
-            </div>
-          </form>
+        <div class="form-group">
+          <label for="product-quantity">Cantidad:</label>
+          <input type="text" id="product-quantity" name="product-quantity">
         </div>
-      </div>
-      
-      <div id="delete-product-modal" class="modal">
-        <div class="modal-content">
-          <span class="close">&times;</span>
-          <h2>¿Está seguro de eliminar?</h2>
-          <button id="confirm-delete-btn">Eliminar</button>
-          <button id="cancel-delete-btn">Cancelar</button>
+        <div class="form-group">
+          <label for="product-price">Precio:</label>
+          <input type="text" id="product-price" name="product-price">
         </div>
-      </div>
+        <div class="form-group">
+          <label for="product-iva">IVA:</label>
+          <input type="text" id="product-iva" name="product-iva">
+        </div>
+        <div class="form-group">
+          <label for="product-discount">Descuento:</label>
+          <input type="text" id="product-discount" name="product-discount">
+        </div>
+        <div class="form-group">
+          <label for="product-state">Estado:</label>
+          <select id="product-state" name="product-state">
+            <option value="Activo">Activo</option>
+            <option value="Inactivo">Inactivo</option>
+          </select>
+        </div>
+        <div class="form-group">
+          <input type="submit" value="Registrar">
+        </div>
+      </form>
+    </div>
+  </div>
+  
+  <div id="delete-product-modal" class="modal">
+    <div class="modal-content">
+      <span class="close">&times;</span>
+      <h2>¿Está seguro de eliminar?</h2>
+      <button id="confirm-delete-btn">Eliminar</button>
+      <button id="cancel-delete-btn">Cancelar</button>
+    </div>
+  </div>
+ 
 </body>
 <script src="/frontend/js/productos.js"></script>
 </html>

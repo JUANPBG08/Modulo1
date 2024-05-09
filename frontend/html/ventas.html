@@ -1,0 +1,126 @@
+<html lang="es">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Gestión de Ventas</title>
+  <link rel="stylesheet" href="/frontend/css/ventas.css">
+</head>
+<body>
+
+    <div class="content">
+        <h1>Gestión de Ventas</h1>
+        <div class="filters">
+          <label for="date">Fecha:</label>
+          <input type="date" id="date" name="date">
+          <label for="client">Cliente:</label>
+          <select id="client" name="client">
+            <option value="">Todos</option>
+            <!-- Opciones de clientes -->
+          </select>
+          <label for="status">Estado:</label>
+          <select id="status" name="status">
+            <option value="">Todos</option>
+            <option value="Borrador">Borrador</option>
+            <option value="Cancelada">Cancelada</option>
+            <option value="PendientePago">Pendiente Pago</option>
+            <option value="Pagada">Pagada</option>
+          </select>
+          <button id="search-btn">Buscar</button>
+        </div>
+        <div class="sales-list">
+          <h2>Listado de Ventas</h2>
+          <table id="sales-table">
+            <thead>
+              <tr>
+                <th>ID</th>
+                <th>Cliente</th>
+                <th>Fecha</th>
+                <th>Estado</th>
+                <th>Total</th>
+                <th>Acciones</th>
+              </tr>
+            </thead>
+            <tbody>
+              <!-- Aquí se cargarán los datos de las ventas -->
+            </tbody>
+          </table>
+        </div>
+        <button id="add-sale-btn">Agregar Venta</button>
+      </div>
+      
+      <div id="add-sale-modal" class="modal">
+        <div class="modal-content">
+          <span class="close">&times;</span>
+          <h2>Agregar Venta</h2>
+          <form id="add-sale-form">
+            <div class="form-group">
+              <label for="client-name">Cliente:</label>
+              <select id="client-name" name="client-name">
+                <!-- Opciones de clientes -->
+              </select>
+            </div>
+            <div class="form-group">
+              <label for="product-name">Producto:</label>
+              <select id="product-name" name="product-name">
+                <!-- Opciones de productos -->
+              </select>
+            </div>
+            <div class="form-group">
+              <label for="quantity">Cantidad:</label>
+              <input type="text" id="quantity" name="quantity">
+            </div>
+            <div class="form-group">
+              <input type="submit" value="Agregar Producto">
+            </div>
+          </form>
+          <div class="sale-details">
+            <h3>Detalle de Venta</h3>
+            <table id="sale-details-table">
+              <thead>
+                <tr>
+                  <th>Producto</th>
+                  <th>Cantidad</th>
+                  <th>Precio Unitario</th>
+                  <th>Subtotal</th>
+                  <th>Acciones</th>
+                </tr>
+              </thead>
+              <tbody>
+                <!-- Detalle de venta -->
+              </tbody>
+            </table>
+          </div>
+          <div class="total-info">
+            <label>Subtotal:</label>
+            <span id="subtotal">0</span>
+            <label>Descuento:</label>
+            <select id="discount" name="discount">
+              <option value="0">0%</option>
+              <option value="5">5%</option>
+              <option value="10">10%</option>
+              <option value="15">15%</option>
+            </select>
+            <label>Total IVA:</label>
+            <span id="total-iva">0</span>
+            <label>Total:</label>
+            <span id="total">0</span>
+          </div>
+          <div class="payment-info">
+            <label for="cash">Efectivo:</label>
+            <input type="text" id="cash" name="cash">
+            <button id="calculate-change-btn">Calcular Cambio</button>
+            <label for="change">Cambio:</label>
+            <span id="change">0</span>
+          </div>
+          <div class="buttons">
+            <button id="approve-sale-btn">Aprobar Venta</button>
+            <button id="cancel-sale-btn">Cancelar Venta</button>
+            <button id="pay-sale-btn">Marcar como Pagada</button>
+          </div>
+        </div>
+      </div>
+      
+
+<script src="/frontend/js/ventas.js"></script>
+</body>
+</html>
